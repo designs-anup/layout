@@ -8,21 +8,24 @@
     <script defer type="text/javascript" src="app.js"></script>
 </head>
 <body>
-    <button id="open-sidebar" onclick="openSidebar(this)">
+    <button id="open-sidebar" onclick="openSidebar(this)" aria-label="open sidebar" aria-expanded="flase" aria-controls="navbar">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
     </button>  
     <nav id="navbar">
     <ul>
-        <li><button id="close-sidebar" onclick="closeSidebar()">Close</button></li>
-        <li class="home-li"><a class="active-link" href="#">Home</a></li>
+        <li><button id="close-sidebar" onclick="closeSidebar()" aria-label="close sidebar">Close</button></li>
+        <li class="home-li"><a class="active-link" aria-current="page" href="#">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">Contact Us</a></li>
         <li><a class="accent-link" href="#">Login</a></li>
     </ul>
     </nav>
+
+    <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+
     <main>
     <h1>Home Page</h1>
     <p>

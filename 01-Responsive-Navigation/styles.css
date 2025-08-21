@@ -66,9 +66,19 @@ nav{
   border: none;
   background-color: transparent;
   padding: 0;
-  display: flex;
+/*  display: flex; */
   flex-direction: column;
   gap: 6px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+
+#close-sidebar{
+  border: none;
+  padding: 0;
+  display: none;
 }
 
 .bar1,.bar2,.bar3{
@@ -88,6 +98,14 @@ nav{
 
 .change .bar3{
   transform: translate(0, -11px) rotate(45deg);
+}
+
+#overlay{
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: none;
 }
 
 @media screen and (max-width: 700px){
@@ -122,5 +140,13 @@ nav{
   
   nav.show{
     right: 0;
+  }
+
+  nav.show ~ #overlay{
+    display: block;
+  }
+
+  #open-sidebar, #close-sidebar{
+    display: flex;
   }
 }
