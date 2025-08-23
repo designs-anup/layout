@@ -37,6 +37,14 @@ body{
     position: sticky;
     top: 0;
     align-self: start;
+    transition: 300ms ease-in-out;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+#sideNavigation.close{
+    padding: 5px;
+    width: 60px;
 }
 
 #sideNavigation ul{
@@ -109,6 +117,32 @@ body{
 
 #sideNavigation .sub-menu.show{
     grid-template-rows: 1fr;
+}
+.dropdown-btn svg{
+    transform: 200ms ease;
+}
+.rotate svg:last-child{
+    rotate: 180deg;
+}
+
+#sideNavigation .sub-menu a{
+    padding-left: 2em;
+}
+
+#toggle-btn{
+    margin-left: auto;
+    padding:1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+
+    svg{
+        transition: rotate 150ms ease;
+    }
+}
+#toggle-btn:hover{
+    background-color: var(--hover-clr);
 }
 
 main{
