@@ -92,6 +92,25 @@ body{
     flex-grow: 1;
 }
 
+#sideNavigation a:hover,
+#sideNavigation .dropdown-btn:hover{
+    background-color: var(--hover-clr);
+}
+
+#sideNavigation .sub-menu{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 300ms ease-in-out;
+
+    > div{
+        overflow: hidden;
+    }
+}
+
+#sideNavigation .sub-menu.show{
+    grid-template-rows: 1fr;
+}
+
 main{
     padding: min(30px, 7%);
 
