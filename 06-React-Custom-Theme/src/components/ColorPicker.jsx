@@ -1,4 +1,9 @@
+import { useState } from 'react'
+
 const ColorPicker = () => {
+
+  let [textColor, setTextColor] = useState('#fff000');
+
   const handleColorChange = (event) => {
     const selectedColor = event.target.value;
     // document.body.style.backgroundColor = selectedColor;
@@ -7,6 +12,10 @@ const ColorPicker = () => {
     document.getElementById("output").innerText = selectedColor;
     document.getElementById("outputRGB").innerText = hexToRGB(selectedColor)
     document.getElementById("outputHSL").innerText = hexToHSL(selectedColor)
+
+    textColor = selectedColor
+
+    setTextColor(textColor)
   };
   /*
   function hexToRGB(hex){
@@ -71,6 +80,7 @@ const ColorPicker = () => {
       <div id="output"></div>
       <div id="outputRGB"></div>
       <div id="outputHSL"></div>
+      <h2 style={{color: textColor}}>H2 text color is {textColor}</h2>
     </>
   )
 }
