@@ -45,3 +45,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.option{
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1rem;
+  border: 1px solid lavender;
+}
