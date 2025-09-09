@@ -19,7 +19,7 @@ function App() {
 
       {
         quizStage === QUIZ_STAGES.START ? (<Start setQuizStage={setQuizStage} />)  : 
-        quizStage === QUIZ_STAGES.IN_PROGRESS ? (<Quiz/>) :
+        quizStage === QUIZ_STAGES.IN_PROGRESS ? (<Quiz setQuizStage={setQuizStage} />) :
         (<Result/>)
       }
 
