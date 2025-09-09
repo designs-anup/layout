@@ -13,10 +13,9 @@ const Quiz = () => {
                 </div>
                 <div className="quiz">
                     <p className="question">{QUESTIONS[currentQuestion].question}</p>
-                    <Option data="Option 1" />
-                    <Option data="Option 2" />
-                    <Option data="Option 3" />
-                    <Option data="Option 4" />
+
+                    {QUESTIONS[currentQuestion].options.map((option) => (<Option key={option} data={option} />))}
+
                 </div>
                 <button id="next">Next</button>
             </div>
