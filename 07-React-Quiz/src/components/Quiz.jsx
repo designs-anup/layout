@@ -3,12 +3,14 @@ import Option from "./Option"
 import QUESTIONS from "../data/Questions"
 import { QUIZ_STAGES } from "../constants/constants"
 
-const Quiz = ({setQuizStage}) => {
+const Quiz = ({setQuizStage, score, setScore}) => {
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [selectedOption, setSelectedOption] = useState(null)
 
     const onNextClick = () => {
-
+        if(selectedOption === QUESTIONS[currentQuestion].correctOption){
+            setScore(score + 1)
+        }
         if(currentQuestion === QUESTIONS.length -1){
             // move to result screen
             setQuizStage(QUIZ_STAGES.ENDED)

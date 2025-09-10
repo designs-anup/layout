@@ -3,7 +3,7 @@ const Option = ({data, correctOption, selectedOption, setSelectedOption}) => {
         <>
             <button className={`option ${selectedOption &&
                 (data === correctOption ? 'correct' : data === selectedOption ? 'incorrect' : '')
-            }`} onClick={() => (setSelectedOption(data))}>{data}</button>
+            }`} onClick={() => (setSelectedOption(data))} disabled={!!selectedOption}>{data}</button>
         </>
     )
 }
