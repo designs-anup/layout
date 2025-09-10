@@ -5,6 +5,8 @@ import { QUIZ_STAGES } from "../constants/constants"
 
 const Quiz = ({setQuizStage}) => {
     const [currentQuestion, setCurrentQuestion] = useState(0)
+    const [selectedOption, setSelectedOption] = useState(null)
+
     const onNextClick = () => {
 
         if(currentQuestion === QUESTIONS.length -1){
@@ -13,6 +15,7 @@ const Quiz = ({setQuizStage}) => {
         }
 
         setCurrentQuestion(currentQuestion + 1)
+        setSelectedOption(null)
     }
 
     return(
@@ -24,7 +27,13 @@ const Quiz = ({setQuizStage}) => {
                 <div className="quiz">
                     <p className="question">{QUESTIONS[currentQuestion].question}</p>
 
-                    {QUESTIONS[currentQuestion].options.map((option) => (<Option key={option} data={option} />))}
+                    {QUESTIONS[currentQuestion].options.map((option) => (<Option 
+                                                                            key={option} 
+                                                                            data={option}
+                                                                            correctOption={QUESTIONS[currentQuestion].correctOption}
+                                                                            selectedOption={selectedOption}
+                                                                            setSelectedOption={setSelectedOption} 
+                                                                        />))}
 
                 </div>
                 <button id="next" onClick={onNextClick}>Next</button>

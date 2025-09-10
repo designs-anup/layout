@@ -53,3 +53,15 @@
   margin-bottom: 1rem;
   border: 1px solid lavender;
 }
+
+.incorrect{
+  background-color: rgb(248, 215, 215);
+  color: rgb(201, 4, 4);
+  border-color: rgb(201, 4, 4);
+}
+
+.correct{
+  background-color: rgb(236, 255, 240);
+  color: rgb(4, 181, 104);
+  border-color: rgb(4, 181, 104);
+}
